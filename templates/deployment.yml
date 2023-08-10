@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: {{ .Values.component }}
-        image: 739561048503.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.component }}:{{ .Values.appVersion }}
+        image: 637261222008.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.component }}:{{ .Values.appVersion }}
         livenessProbe:
           httpGet:
             path: /health
@@ -44,7 +44,7 @@ spec:
       {{- if .Values.initcontainer }}
       initContainers:
         - name: dbload
-          image: 739561048503.dkr.ecr.us-east-1.amazonaws.com/init-container:2.0.5
+          image: 637261222008.dkr.ecr.us-east-1.amazonaws.com/init-container:d1
           envFrom:
             - secretRef:
                 name: {{ .Values.component }}
